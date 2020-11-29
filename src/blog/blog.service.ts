@@ -22,12 +22,12 @@ export class BlogService {
     }
     async editpost(id,CreatePostDTO:CreatePostDTO){
         const post = this.getpost(id);
-        const updated = await this.Post.findBuIdAndUpdate(id,CreatePostDTO,{new:true});
+        const updated = await this.Post.findByIdAndUpdate(id,CreatePostDTO,{new:true});
 
         return updated;
     }
     async deletepost(id):Promise<Postmodel>{
-        const deletepost = await this.Post.deleteone({_id:id}).exec();
+        const deletepost = await this.Post.deleteOne({_id:id}).exec();
         return deletepost;
     }
     async getpost(id):Promise<Postmodel>{

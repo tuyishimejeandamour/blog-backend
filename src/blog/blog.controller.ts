@@ -20,7 +20,7 @@ async getOne(@Param('id',ValidateObjectIdPipe) id: number): Promise<Postmodel> {
 }
 @Post()
 async addpost(@Body() createpostDTO:CreatePostDTO):Promise<Postmodel> {
-const newpost = await this.addpost(createpostDTO);
+const newpost = await this.blogservice.addpost(createpostDTO);
 return newpost;
 }
 @Patch(':id')

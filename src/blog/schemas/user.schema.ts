@@ -1,19 +1,19 @@
 import * as mongoose from 'mongoose';
 
-export const blogschema = new mongoose.Schema({
-    title:{
+export const Userschema = new mongoose.Schema({
+    name:{
        type:String,
         required:true,
     },
-    discription:{
+    username:{
         type:String
         
     },
-    body:{
+    email:{
         type:String,
         required:true
     },
-    postedon:{
+    password:{
         type:String
     }
 })
